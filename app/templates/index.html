@@ -1,0 +1,22 @@
+{% extends './layout.html' %}
+
+{% block title %}{{ data.titulo }}{% endblock %}
+
+{% block body %}
+
+<h1>mejores jugadores</h1>
+    
+    <h1>{{ data.bienvenida }}
+        {{data.titulo}}
+        {{data.numero_de_jugadores}}
+    </h1>
+    {% if data.numero_de_jugadores > 0 %}
+    <ul>{% for c in data.jugadores %}
+        <li>{{c}}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <h2>No existen tantos jugadores</h2>
+    {% endif %}
+
+{% endblock %}
